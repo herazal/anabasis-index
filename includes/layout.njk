@@ -17,7 +17,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "{{ type == 'video' ? 'EducationalVideo' : 'CreativeWork' }}",
+"@type": "{% if type == 'video' %}EducationalVideo{% else %}CreativeWork{% endif %}"
     "name": "{{ title }}",
     "description": "{{ description }}",
     "url": "{{ youtube or lien }}",
