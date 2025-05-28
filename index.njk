@@ -1,0 +1,11 @@
+---
+layout: layout.njk
+title: "Index Anabasis Technology"
+---
+
+<h1>Index global Anabasis</h1>
+<ul>
+{% for item in collections.all %}
+  <li><a href="{{ item.url }}">{{ item.data.title }}</a> – {{ item.data.description }}</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+  {% if youtube %}
+  <p><a href="{{ youtube }}">Voir la vidéo</a></p>
+  {% endif %}
+  {% if lien %}
+  <p><a href="{{ lien }}">En savoir plus</a></p>
+  {% endif %}
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+  "@type": "{% if type == 'video' %}EducationalVideo{% else %}CreativeWork{% endif %}"
+    "name": "{{ title }}",
+    "description": "{{ description }}",
+    "url": "{{ youtube or lien }}",
+    "educationalLevel": "{{ niveau }}",
+    "author": {
+      "@type": "Organization",
+      "name": "Anabasis Technology"
+    },
+    "datePublished": "{{ date }}"
+  }
+  </script>
+</body>
+</html>
