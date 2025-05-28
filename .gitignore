@@ -1,0 +1,16 @@
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Eleventy build output
+_site/
+
+# PowerShell deployment scripts
+deploy.ps1
+deploy-corrige.ps1
+
+# IDE/configuration système
+.vscode/
+.DS_Store
+Thumbs.db
